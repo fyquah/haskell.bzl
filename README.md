@@ -15,4 +15,4 @@ on this project - rather, I am simply adding features when I need to use them.
 
 ## License
 
-MIT
+Apache License, Version 2.0
