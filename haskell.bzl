@@ -1,5 +1,7 @@
 """Bazel rules for haskell compilation."""
 
+_GHC = "//haskell:ghc"
+
 
 def _modulize_path(short_path):
   items = short_path.split("/")
@@ -105,7 +107,7 @@ haskell_binary = rule(
       "data": attr.label_list(),
       "flags": attr.string_list(),
       "main": attr.label(allow_single_file=True, mandatory=True),
-      "_ghc": attr.label(default=Label("//tools:ghc"),
+      "_ghc": attr.label(default=Label(_GHC),
                          executable=True,
                          allow_single_file=True)
       }
@@ -120,7 +122,7 @@ haskell_library = rule(
         "deps": attr.label_list(),
         "data": attr.label_list(),
         "flags": attr.string_list(),
-        "_ghc": attr.label(default=Label("//tools:ghc"),
+        "_ghc": attr.label(default=Label(_GHC),
                            executable=True,
                            allow_single_file=True)
         }

@@ -1,1 +1,3 @@
-# An empty BUILD file to allow us to pick up haskell.bzl
+"""BUILD file to provide haskell_* rules."""
+
+exports_files(["ghc"])
