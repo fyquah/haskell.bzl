@@ -21,10 +21,7 @@ def _get_module_name(short_path):
 
 def _change_extension(path, ext):
   a, b, c = path.rpartition(".")
-  if c:
-    return a + b + ext
-  else:
-    return a + "." + ext
+  return a + b + ext
 
 
 def _capitalize_basename(path):
